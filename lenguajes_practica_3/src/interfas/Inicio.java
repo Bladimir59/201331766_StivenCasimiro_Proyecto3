@@ -5,6 +5,7 @@
  */
 package interfas;
 
+import java.util.regex.Pattern;
 import javax.swing.table.DefaultTableModel;
 import lenguajes_practica_3.analisador;
 import lenguajes_practica_3.archivo;
@@ -221,7 +222,7 @@ public class Inicio extends javax.swing.JFrame {
         String patron31=")";
         String patron32="{";
         String patron33="}";
-        String patron34=" " ;
+        String patron34="'";
         String patron35=";";
         String[] linea = DATOS.split("\n");
         
@@ -404,9 +405,27 @@ public class Inicio extends javax.swing.JFrame {
                     tipo="Signo";
                     model.addRow(new Object[]{patron35,tipo,i,j});
                 }
-                
-                
-        }
+                else if(Pattern.matches("[0-9]+", palabra[j])){
+                    tipo="numero entero";
+                    model.addRow(new Object[]{palabra[j],tipo,i,j});
+                }
+                else if(Pattern.matches("[0-9.0-9]+", palabra[j])){
+                    tipo="numero FLOTANTE";
+                    model.addRow(new Object[]{palabra[j],tipo,i,j});
+                }
+                else if(Pattern.matches("[a-zA-Z0-9]+", palabra[j])){
+                    tipo="identificador";
+                    model.addRow(new Object[]{palabra[j],tipo,i,j});
+                }
+                else if(Pattern.matches("[\"a-zA-Z0-9\"]+", palabra[j])){
+                    tipo="cadena";
+                    model.addRow(new Object[]{palabra[j],tipo,i,j}); 
+                }
+                else {
+                    tipo="error";
+                    model.addRow(new Object[]{palabra[j],tipo,i,j}); 
+                }
+            }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
