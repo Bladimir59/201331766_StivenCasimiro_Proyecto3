@@ -5,6 +5,7 @@
  */
 package interfas;
 
+import java.awt.Image;
 import java.util.regex.Pattern;
 import javax.swing.table.DefaultTableModel;
 import lenguajes_practica_3.analisador;
@@ -21,8 +22,9 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        
     }
-
+    public int siguiente=1;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +36,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -47,16 +51,44 @@ public class Inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("BIENVENIDO LENGUAJES FORMALES ");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1094, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 516, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1188, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(9, 9, 9)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
+
+        jPanel4.getAccessibleContext().setAccessibleParent(jPanel4);
 
         jTabbedPane1.addTab(" ", jPanel1);
 
@@ -84,7 +116,7 @@ public class Inicio extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton2.setText("analisar");
+        jButton2.setText("siguiente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -225,215 +257,218 @@ public class Inicio extends javax.swing.JFrame {
         String patron34="'";
         String patron35=";";
         String[] linea = DATOS.split("\n");
-        
-        for(int i=0;i<linea.length;i++){
-            System.out.println("Linea "+i+ ": "+linea[i]);
-            String palabra[]=linea[i].split(" ");
-            for(int j=0;j<palabra.length;j++){
-                if(palabra[j].equals(patron1)){
-                    System.out.println(" encontrado en la linea "+i+"  y es la palabra numero "+j);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron1,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron2)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron2,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron3)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron3,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron4)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron4,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron5)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron5,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron6)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron6,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron7)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron7,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron8)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron8,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron9)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron9,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron10)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron10,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron11)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron11,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron12)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron12,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron13)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron13,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron14)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron14,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron15)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron15,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron16)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="palabra reservada";
-                    model.addRow(new Object[]{patron16,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron17)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="boolena";
-                    model.addRow(new Object[]{patron17,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron18)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="boolena";
-                    model.addRow(new Object[]{patron18,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron19)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron19,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron20)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron20,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron21)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron21,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron22)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron22,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron23)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron23,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron24)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron24,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron25)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron25,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron26)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron26,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron27)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron27,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron28)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron28,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron29)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Operador";
-                    model.addRow(new Object[]{patron29,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron30)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Agrupacion";
-                    model.addRow(new Object[]{patron30,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron31)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Agrupacion";
-                    model.addRow(new Object[]{patron31,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron32)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Agrupacion";
-                    model.addRow(new Object[]{patron32,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron33)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Agrupacion";
-                    model.addRow(new Object[]{patron33,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron34)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Signo";
-                    model.addRow(new Object[]{patron34,tipo,i,j});
-                }
-                else if(palabra[j].equals(patron35)){
-                    System.out.println(" encontrado en la linea "+i);
-                    tipo="Signo";
-                    model.addRow(new Object[]{patron35,tipo,i,j});
-                }
-                else if(Pattern.matches("[0-9]+", palabra[j])){
-                    tipo="numero entero";
-                    model.addRow(new Object[]{palabra[j],tipo,i,j});
-                }
-                else if(Pattern.matches("[0-9.0-9]+", palabra[j])){
-                    tipo="numero FLOTANTE";
-                    model.addRow(new Object[]{palabra[j],tipo,i,j});
-                }
-                else if(Pattern.matches("[a-zA-Z0-9]+", palabra[j])){
-                    tipo="identificador";
-                    model.addRow(new Object[]{palabra[j],tipo,i,j});
-                }
-                else if(Pattern.matches("[\"a-zA-Z0-9\"]+", palabra[j])){
-                    tipo="cadena";
-                    model.addRow(new Object[]{palabra[j],tipo,i,j}); 
-                }
-                else {
-                    tipo="error";
-                    model.addRow(new Object[]{palabra[j],tipo,i,j}); 
-                }
+        //ciclo for que recorera el texto linea por linea
+        for(int i=0;i<linea.length;i++){            
+                System.out.println("Linea "+i+ ": "+linea[i]);
+                String palabra[]=linea[i].split(" ");
+                //ciclo que recorrera la linea dividiendo las palabras
+                for(int j=0;j<palabra.length;j++){
+                    //los if son una forma de verificar si la palabra no es una palabra reservada
+                    if(palabra[j].equals(patron1)){
+                        System.out.println(" encontrado en la linea "+i+"  y es la palabra numero "+j);
+                        tipo="palabra reservada"; //da el valor al tipo de elemnto que es para mostrarlo como tokem
+                        model.addRow(new Object[]{patron1,tipo,i,j});//inserta la informacion a la tabla
+                    }
+                    else if(palabra[j].equals(patron2)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron2,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron3)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron3,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron4)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron4,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron5)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron5,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron6)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron6,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron7)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron7,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron8)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron8,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron9)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron9,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron10)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron10,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron11)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron11,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron12)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron12,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron13)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron13,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron14)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron14,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron15)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron15,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron16)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="palabra reservada";
+                        model.addRow(new Object[]{patron16,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron17)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="boolena";
+                        model.addRow(new Object[]{patron17,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron18)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="boolena";
+                        model.addRow(new Object[]{patron18,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron19)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron19,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron20)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron20,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron21)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron21,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron22)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron22,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron23)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron23,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron24)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron24,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron25)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron25,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron26)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron26,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron27)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron27,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron28)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron28,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron29)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Operador";
+                        model.addRow(new Object[]{patron29,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron30)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Agrupacion";
+                        model.addRow(new Object[]{patron30,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron31)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Agrupacion";
+                        model.addRow(new Object[]{patron31,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron32)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Agrupacion";
+                        model.addRow(new Object[]{patron32,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron33)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Agrupacion";
+                        model.addRow(new Object[]{patron33,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron34)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Signo";
+                        model.addRow(new Object[]{patron34,tipo,i,j});
+                    }
+                    else if(palabra[j].equals(patron35)){
+                        System.out.println(" encontrado en la linea "+i);
+                        tipo="Signo";
+                        model.addRow(new Object[]{patron35,tipo,i,j});
+                    }
+                    else if(Pattern.matches("[0-9]+", palabra[j])){
+                        tipo="numero entero";
+                        model.addRow(new Object[]{palabra[j],tipo,i,j});
+                    }
+                    else if(Pattern.matches("[0-9.0-9]+", palabra[j])){
+                        tipo="numero FLOTANTE";
+                        model.addRow(new Object[]{palabra[j],tipo,i,j});
+                    }
+                    else if(Pattern.matches("[a-zA-Z0-9]+", palabra[j])){
+                        tipo="identificador";
+                        model.addRow(new Object[]{palabra[j],tipo,i,j});
+                    }
+                    else if(Pattern.matches("[\"a-zA-Z0-9\"]+", palabra[j])){
+                        tipo="cadena";
+                        model.addRow(new Object[]{palabra[j],tipo,i,j});
+                    }
+                    else {
+                        tipo="error";
+                        model.addRow(new Object[]{palabra[j],tipo,i,j});
+                    }
+                
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //analisa todo el texto de un solo golpe
-        //prueba de como mostrar info en un jtable
-        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"uno","dos","tres"});
+        //boton para analisar linea por linea
+        siguiente=0;
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -476,9 +511,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
